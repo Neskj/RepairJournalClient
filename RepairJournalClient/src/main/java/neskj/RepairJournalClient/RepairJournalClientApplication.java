@@ -8,6 +8,7 @@ public class RepairJournalClientApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(RepairJournalClientApplication.class, args);
+		System.out.println("Hello from RepairJournalClient !!!!!");
 	}
 
 }
