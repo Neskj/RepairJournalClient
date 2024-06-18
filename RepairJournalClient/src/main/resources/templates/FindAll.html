@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" xmlns:th="http://www.thymeleaf.org">
+    <title>RepairJournalClient</title>
+    <style>
+        .blue-bar {
+            background-color: #0069A9;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            width: 100%;
+        }
+        .info-block{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        .left-menu{
+            float: left;
+            margin: 5px;
+            flex-basis: 18%;
+            padding: 40px;
+            background-color: #3AA6D0;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .left-menu button{
+            width: 100%;
+            padding: 10px;
+            background-color: #0069A9;
+            color: #fff;
+            border-radius: 5px;
+            font-size: 1rem;
+
+        }
+        .view-block{
+            float: right;
+            margin: 5px;
+            flex-basis: 80%;
+            padding: 40px;
+            background-color: #62B1D0;
+            border-radius: 10px;
+        }
+        body{
+            text-align: center;
+            font-family: "Verdana","sans-serif";
+        }
+        h1{
+
+        }
+        h3{
+
+        }
+    </style>
+</head>
+<body>
+<img src=https://www.mosvodokanal.ru/local/templates/mvk_main_page/i/i-mvk-logo.png >
+<br/><br>
+
+<div class="blue-bar">
+    <h1>Журнал ремонта цеха испытаний и техобслуживания</h1>
+</div>
+<br/><br>
+
+<div class="info-block">
+    <form class="left-menu">
+        <h3>Меню </h3>
+        <button type="submit">Создать новую запись</button>
+        <br/><br>
+        <button type="submit">Обновить статус работы</button>
+        <br/><br>
+        <button type="submit">Найти ремонтируемые единицы</button>
+        <br/><br>
+        <button type="submit">Найти по серийному номеру</button>
+        <br/><br>
+    </form>
+    <form class="view-block">
+        <h3>Файнд олл</h3>
+    </form>
+</div>
+
+</body>
+</html>
