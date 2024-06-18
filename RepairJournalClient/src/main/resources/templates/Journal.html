@@ -63,17 +63,17 @@
     <h1>Журнал ремонта цеха испытаний и техобслуживания</h1>
 </div>
 <br/><br>
-
+<!--Очень громоздко и с дублированием кода, но зато я применил знания JS на кнопки ))))) -->
 <div class="info-block">
     <form class="left-menu">
         <h3>Меню </h3>
-        <button type="submit">Создать новую запись</button>
+        <button type="button" onclick="window.location.href='/journal/create'">Создать новую запись</button>
         <br/><br>
-        <button type="submit">Обновить статус работы</button>
+        <button type="button" onclick="window.location.href='/journal/update'">Обновить статус работы</button>
         <br/><br>
-        <button type="submit">Найти ремонтируемые единицы</button>
+        <button type="button" onclick="window.location.href='/journal/findall'">Найти ремонтируемые единицы</button>
         <br/><br>
-        <button type="submit">Найти по серийному номеру</button>
+        <button type="button" onclick="window.location.href='/journal/serial'">Найти по серийному номеру</button>
         <br/><br>
     </form>
     <form class="view-block">
