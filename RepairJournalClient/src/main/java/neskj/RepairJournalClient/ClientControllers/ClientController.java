@@ -1,6 +1,8 @@
 package neskj.RepairJournalClient.ClientControllers;
 
+import neskj.RepairJournalClient.Models.RepairUnit;
 import neskj.RepairJournalClient.Proxy.JournalProxy;
+import neskj.RepairJournalClient.Services.InputParser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,11 +16,13 @@ import java.util.List;
 public class ClientController {
 
     private final JournalProxy proxy;
+    private final InputParser parser;
 
     @Autowired
-    ClientController(JournalProxy proxy){
+    ClientController(JournalProxy proxy,InputParser parser){
 
        this.proxy=proxy;
+       this.parser=parser;
     }
 
     @GetMapping("/journal")
@@ -42,12 +46,7 @@ public class ClientController {
     @GetMapping("/journal/findall")
     public String openFindAllUnits(Model page){
 
-        String[][] listNotDoneUnits= proxy.getNotDone();
-        List<String[]> list=Arrays.asList(listNotDoneUnits);
-        for(String[] x:list){
-            for(String y:x)
-            System.out.println(y);
-        }
+       List<RepairUnit> dataList=parser.parse(proxy.getNotDone());
 
 
         return "FindAll.html";

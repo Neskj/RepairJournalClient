@@ -60,4 +60,40 @@ public class RepairUnit {
         }
 
     }
+
+    @Override
+    public String toString() {
+        return "RepairUnit{" +
+                "type='" + type + '\'' +
+                ", serial='" + serial + '\'' +
+                ", date='" + date + '\'' +
+                ", defect='" + defect + '\'' +
+                ", complete='" + complete + '\'' +
+                ", status='" + status + '\'' +
+                '}';
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public String getSerial() {
+        return serial;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public String getDefect() {
+        return defect;
+    }
+
+    public String getComplete() {
+        return complete;
+    }
+
+    public String getStatus() {
+        return status;
+    }
 }
