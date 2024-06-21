@@ -46,8 +46,8 @@ public class ClientController {
     @GetMapping("/journal/findall")
     public String openFindAllUnits(Model page){
 
-       List<RepairUnit> dataList=parser.parse(proxy.getNotDone());
-
+        List<RepairUnit> dataList=parser.parse(proxy.getNotDone());
+        page.addAttribute("dataList",dataList);
 
         return "FindAll.html";
     }

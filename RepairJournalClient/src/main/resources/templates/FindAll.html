@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8" xmlns:th="http://www.thymeleaf.org">
     <title>RepairJournalClient</title>
@@ -78,6 +78,24 @@
     </form>
     <form class="view-block">
         <h3>Файнд олл</h3>
+            <table>
+                <tr>
+                    <td>Тип оборудования</td>
+                    <td>Серийный номер</td>
+                    <td>Дата поступления</td>
+                    <td>Деффект</td>
+                    <td>Проведенные работы</td>
+                    <td>Статус</td>
+                </tr>
+                <tr th:each="dataList:${dataList}">
+                    <td th:text="${dataList.type}"></td>
+                    <td th:text="${dataList.serial}"></td>
+                    <td th:text="${dataList.date}"></td>
+                    <td th:text="${dataList.defect}"></td>
+                    <td th:text="${dataList.complete}"></td>
+                    <td th:text="${dataList.status}"></td>
+                </tr>
+            </table>
     </form>
 </div>
 
