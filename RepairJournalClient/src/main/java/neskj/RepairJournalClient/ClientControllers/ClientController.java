@@ -1,11 +1,13 @@
 package neskj.RepairJournalClient.ClientControllers;
 
-import neskj.RepairJournalClient.Models.Unit;
 import neskj.RepairJournalClient.Proxy.JournalProxy;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+
+import java.util.Arrays;
+import java.util.List;
 
 
 @Controller("http://localhost:8080")
@@ -40,8 +42,13 @@ public class ClientController {
     @GetMapping("/journal/findall")
     public String openFindAllUnits(Model page){
 
-        Iterable<Unit>listNotDoneUnits= proxy.getNotDone();
-        System.out.println(listNotDoneUnits);
+        String[][] listNotDoneUnits= proxy.getNotDone();
+        List<String[]> list=Arrays.asList(listNotDoneUnits);
+        for(String[] x:list){
+            for(String y:x)
+            System.out.println(y);
+        }
+
 
         return "FindAll.html";
     }
