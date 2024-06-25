@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller("http://localhost:8080")
@@ -17,6 +18,7 @@ public class ClientController {
 
     private final JournalProxy proxy;
     private final InputParser parser;
+    private List<RepairUnit> dataList=new ArrayList<>();
 
     @Autowired
     ClientController(JournalProxy proxy,InputParser parser){
@@ -46,7 +48,8 @@ public class ClientController {
     @GetMapping("/journal/findall")
     public String openFindAllUnits(Model page){
 
-        List<RepairUnit> dataList=parser.parse(proxy.getNotDone());
+        dataList.clear();
+        dataList=parser.parse(proxy.getNotDone());
         page.addAttribute("dataList",dataList);
 
         return "FindAll.html";
@@ -61,7 +64,8 @@ public class ClientController {
     @PostMapping("/journal/serial")
     public String takeDataSerial(@RequestParam String serial,Model page){
 
-        List<RepairUnit> dataList=parser.parse(proxy.findBySerial(serial));
+        dataList.clear();
+        dataList=parser.parse(proxy.findBySerial(serial));
         page.addAttribute("dataList",dataList);
 
         return "FindBySerial.html";
