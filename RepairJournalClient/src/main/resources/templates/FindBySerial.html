@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8" xmlns:th="http://www.thymeleaf.org">
     <title>RepairJournalClient</title>
@@ -43,6 +43,12 @@
             background-color: #62B1D0;
             border-radius: 10px;
         }
+        .table{
+            border: 1px solid black;
+        }
+        .table tr, table td{
+            border: 1px solid black;
+        }
         body{
             text-align: center;
             font-family: "Verdana","sans-serif";
@@ -82,6 +88,26 @@
         <input type="text" form="sender" name="serial">
         </br><br>
         <button type="submit" form="sender">Найти</button>
+
+        <table class="table">
+            <tr>
+                <td>Тип оборудования</td>
+                <td>Серийный номер</td>
+                <td>Дата поступления</td>
+                <td>Деффект</td>
+                <td>Проведенные работы</td>
+                <td>Статус</td>
+            </tr>
+            <tr th:each="dataList:${dataList}">
+                <td th:text="${dataList.type}"></td>
+                <td th:text="${dataList.serial}"></td>
+                <td th:text="${dataList.date}"></td>
+                <td th:text="${dataList.defect}"></td>
+                <td th:text="${dataList.complete}"></td>
+                <td th:text="${dataList.status}"></td>
+            </tr>
+        </table>
+
     </form>
 </div>
 

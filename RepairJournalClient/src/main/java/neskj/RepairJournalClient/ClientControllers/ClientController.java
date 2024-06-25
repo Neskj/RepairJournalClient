@@ -61,10 +61,20 @@ public class ClientController {
         return "FindBySerial.html";
     }
 
+    //надо рефакторить текст
     @PostMapping("/journal/serial")
-    public String takeDataSerial(@RequestParam String serial){
+    public String takeDataSerial(@RequestParam String serial,Model page){
 
-        System.out.println(serial);
+        System.out.println("Detect new serial: "+serial);
+
+        List<RepairUnit> dataList=parser.parse(proxy.findBySerial(serial));
+
+        for (RepairUnit x:dataList)
+            System.out.println(x.toString());
+
+        page.addAttribute("dataList",dataList);
+
+
 
         return "FindBySerial.html";
 
