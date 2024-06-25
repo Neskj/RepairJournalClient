@@ -76,14 +76,12 @@
         <button type="button" onclick="window.location.href='/journal/serial'">Найти по серийному номеру</button>
         <br/><br>
     </form>
-    <form class="view-block">
+    <!-- Не вставляется одна form в другую по этому по id-->
+    <form class="view-block" id="sender" action="/journal/serial" method="post">
         <h3>Файнд бай сериал</h3>
-        <br action="/" method="post" align="center">
-            <h5>Введите серийный номер для поиска</h5>
-            <input type="text" name="serial">
-            </br><br>
-            <button type="submit">Найти</button>
-        </form>
+        <input type="text" form="sender" name="serial">
+        </br><br>
+        <button type="submit" form="sender">Найти</button>
     </form>
 </div>
 
