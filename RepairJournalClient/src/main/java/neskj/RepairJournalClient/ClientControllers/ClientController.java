@@ -8,12 +8,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import java.util.Arrays;
 import java.util.List;
-
 
 @Controller("http://localhost:8080")
 public class ClientController {
@@ -61,23 +58,13 @@ public class ClientController {
         return "FindBySerial.html";
     }
 
-    //надо рефакторить текст
     @PostMapping("/journal/serial")
     public String takeDataSerial(@RequestParam String serial,Model page){
 
-        System.out.println("Detect new serial: "+serial);
-
         List<RepairUnit> dataList=parser.parse(proxy.findBySerial(serial));
-
-        for (RepairUnit x:dataList)
-            System.out.println(x.toString());
-
         page.addAttribute("dataList",dataList);
 
-
-
         return "FindBySerial.html";
-
     }
 
 

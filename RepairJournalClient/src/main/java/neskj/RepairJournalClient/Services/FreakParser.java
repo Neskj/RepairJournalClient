@@ -7,16 +7,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class FreakParser implements InputParser{
+public class FreakParser implements InputParser {
 
-    private List<RepairUnit> resultList=new ArrayList<>();
+    private final List<RepairUnit> resultList = new ArrayList<>();
 
     @Override
     public List<RepairUnit> parse(String[][] inputArray) {
 
-        for(String[] x: inputArray){
+        for (String[] x : inputArray) {
 
-            RepairUnit unit=new RepairUnit.Builder()
+            RepairUnit unit = new RepairUnit.Builder()
                     .addType(x[0])
                     .addSerial(x[1])
                     .addDate(x[2])
@@ -28,9 +28,6 @@ public class FreakParser implements InputParser{
 
             System.out.println(unit.toString());
         }
-
-
-
         return resultList;
     }
 }

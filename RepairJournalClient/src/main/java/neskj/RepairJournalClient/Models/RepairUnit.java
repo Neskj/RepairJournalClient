@@ -9,58 +9,6 @@ public class RepairUnit {
     private String complete;
     private String status;
 
-    public static class Builder{
-
-        private RepairUnit repairUnit;
-
-        public Builder(){
-
-            repairUnit=new RepairUnit();
-        }
-
-        public Builder addType(String type){
-
-            repairUnit.type=type;
-            return this;
-        }
-
-        public Builder addSerial(String serial){
-
-            repairUnit.serial=serial;
-            return this;
-        }
-
-        public Builder addDate(String date){
-
-            repairUnit.date=date;
-            return this;
-        }
-
-        public Builder addDefect(String defect){
-
-            repairUnit.defect=defect;
-            return this;
-        }
-
-        public Builder addComplete(String complete){
-
-            repairUnit.complete=complete;
-            return this;
-        }
-
-        public Builder addStatus(String status){
-
-            repairUnit.status=status;
-            return this;
-        }
-
-        public RepairUnit build(){
-
-            return repairUnit;
-        }
-
-    }
-
     @Override
     public String toString() {
         return "RepairUnit{" +
@@ -95,5 +43,56 @@ public class RepairUnit {
 
     public String getStatus() {
         return status;
+    }
+
+    public static class Builder {
+
+        private final RepairUnit repairUnit;
+
+        public Builder() {
+
+            repairUnit = new RepairUnit();
+        }
+
+        public Builder addType(String type) {
+
+            repairUnit.type = type;
+            return this;
+        }
+
+        public Builder addSerial(String serial) {
+
+            repairUnit.serial = serial;
+            return this;
+        }
+
+        public Builder addDate(String date) {
+
+            repairUnit.date = date;
+            return this;
+        }
+
+        public Builder addDefect(String defect) {
+
+            repairUnit.defect = defect;
+            return this;
+        }
+
+        public Builder addComplete(String complete) {
+
+            repairUnit.complete = complete;
+            return this;
+        }
+
+        public Builder addStatus(String status) {
+
+            repairUnit.status = status;
+            return this;
+        }
+
+        public RepairUnit build() {
+
+            return repairUnit;
+        }
     }
 }
