@@ -1,5 +1,6 @@
 package neskj.RepairJournalClient.ClientControllers;
 
+import neskj.RepairJournalClient.Models.HttpData;
 import neskj.RepairJournalClient.Models.RepairUnit;
 import neskj.RepairJournalClient.Proxy.JournalProxy;
 import neskj.RepairJournalClient.Services.InputParser;
@@ -45,6 +46,8 @@ public class ClientController {
                                   @RequestParam String defect) {
 
         System.out.println("New input data : "+type+" "+serial+" "+defect );
+        HttpData httpData=new HttpData(type,serial,defect);
+        proxy.createNewLog(httpData);
 
         return "Create.html";
     }
