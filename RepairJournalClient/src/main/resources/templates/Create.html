@@ -79,11 +79,11 @@
         <button type="button" onclick="window.location.href='/journal/serial'">Найти по серийному номеру</button>
         <br/><br>
     </form>
-    <form class="view-block">
+    <form class="view-block" id="putData" action="/journal/create" method="post">
         <h3>Создать новую запись</h3>
         <br/><br>
         Тип единицы
-        <select name="type">
+        <select name="type" form="putData">
             <option value="Rico Fw-100">Rico Fw-100</option>
             <option value="Rico Fw-150">Rico Fw-150</option>
             <option value="Rico Fw-300">Rico Fw-300</option>
@@ -98,9 +98,9 @@
             <option value="FAST PipeMic XL">FAST PipeMic XL</option>
         </select>
         <br/><br>
-        Серийный № <input type="text" name="serial">
+        Серийный № <input type="text" form="putData" name="serial">
         <br/><br>
-        Неисправность <input type="text" name="defect">
+        Неисправность <input type="text" form="putData" name="defect">
         <br/><br>
         <button type="submit">Создать</button>
     </form>

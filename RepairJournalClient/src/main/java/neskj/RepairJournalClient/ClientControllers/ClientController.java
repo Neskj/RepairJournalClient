@@ -39,6 +39,16 @@ public class ClientController {
         return "Create.html";
     }
 
+    @PostMapping("/journal/create")
+    public String getDataFromView(@RequestParam String type,
+                                  @RequestParam String serial,
+                                  @RequestParam String defect) {
+
+        System.out.println("New input data : "+type+" "+serial+" "+defect );
+
+        return "Create.html";
+    }
+
     @GetMapping("/journal/update")
     public String openUpdatePage(){
 
