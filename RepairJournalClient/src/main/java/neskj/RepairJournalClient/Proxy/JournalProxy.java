@@ -19,4 +19,7 @@ public interface JournalProxy {
     @PostMapping("/data")
     void createNewLog(@RequestBody HttpData httpData);
 
+    @PostMapping("/complete")
+    void updateStatus(@RequestParam String serial,@RequestParam String complete);
+
 }

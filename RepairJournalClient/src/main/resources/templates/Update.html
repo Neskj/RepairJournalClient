@@ -76,8 +76,14 @@
         <button type="button" onclick="window.location.href='/journal/serial'">Найти по серийному номеру</button>
         <br/><br>
     </form>
-    <form class="view-block">
+    <form class="view-block" id="updater" action="/journal/update" method="post">
         <h3>Обновить статус работы</h3>
+        <br/><br>
+        Серийный № <input type="text" form="updater" name="serial">
+        <br/><br>
+        Выполнено <input type="text" form="updater" name="complete">
+        <br/><br>
+        <button type="submit">Обновить</button>
     </form>
 </div>
 

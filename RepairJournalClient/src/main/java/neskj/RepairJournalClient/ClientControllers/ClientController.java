@@ -45,7 +45,6 @@ public class ClientController {
                                   @RequestParam String serial,
                                   @RequestParam String defect) {
 
-        System.out.println("New input data : "+type+" "+serial+" "+defect );
         HttpData httpData=new HttpData(type,serial,defect);
         proxy.createNewLog(httpData);
 
@@ -54,6 +53,14 @@ public class ClientController {
 
     @GetMapping("/journal/update")
     public String openUpdatePage(){
+
+        return "Update.html";
+    }
+
+    @PostMapping("/journal/update")
+    public String takeUpdateData(@RequestParam String serial, @RequestParam String complete){
+
+        proxy.updateStatus(serial,complete);
 
         return "Update.html";
     }
@@ -83,7 +90,4 @@ public class ClientController {
 
         return "FindBySerial.html";
     }
-
-
-
 }
