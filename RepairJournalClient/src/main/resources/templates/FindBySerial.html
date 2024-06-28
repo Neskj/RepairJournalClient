@@ -43,6 +43,23 @@
             background-color: #62B1D0;
             border-radius: 10px;
         }
+        .view-block input{
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            padding: 10px;
+            width: 100%;
+        }
+        .view-block button{
+            align-self: center;
+            border-radius: 5px;
+            font-size: 16px;
+            padding: 5px;
+            margin: 10px;
+        }
+        .view-block h4{
+            text-align: left;
+        }
         .table{
             border: 1px solid black;
         }
@@ -52,12 +69,6 @@
         body{
             text-align: center;
             font-family: "Verdana","sans-serif";
-        }
-        h1{
-
-        }
-        h3{
-
         }
     </style>
 </head>
@@ -69,7 +80,6 @@
     <h1>Журнал ремонта цеха испытаний и техобслуживания</h1>
 </div>
 <br/><br>
-
 <div class="info-block">
     <form class="left-menu">
         <h3>Меню </h3>
@@ -85,7 +95,8 @@
     <!-- Не вставляется одна form в другую по этому по id-->
     <form class="view-block" id="sender" action="/journal/serial" method="post">
         <h3>Найти по серийному номеру</h3>
-        <input type="text" form="sender" name="serial">
+        <label for="serial"><h4>Серийный №</h4></label>
+        <input id="serial" type="text" form="sender" name="serial">
         </br><br>
         <button type="submit" form="sender">Найти</button>
         </br><br>
@@ -107,9 +118,7 @@
                 <td th:text="${dataList.status}"></td>
             </tr>
         </table>
-
     </form>
 </div>
-
 </body>
 </html>
