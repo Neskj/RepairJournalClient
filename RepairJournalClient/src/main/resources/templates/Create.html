@@ -42,10 +42,26 @@
             padding: 40px;
             background-color: #62B1D0;
             border-radius: 10px;
-        }
-        .view-block input{
 
         }
+        .view-block input,select{
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            padding: 10px;
+            width: 100%;
+        }
+        .view-block button{
+            align-self: center;
+        }
+        .view-block h3{
+            text-align: left;
+        }
+        .view-block label{
+            text-align: left;
+        }
+
+
         body{
             text-align: center;
             font-family: "Verdana","sans-serif";
@@ -82,8 +98,8 @@
     <form class="view-block" id="putData" action="/journal/create" method="post">
         <h3>Создать новую запись</h3>
         <br/><br>
-        Тип единицы
-        <select name="type" form="putData">
+        <label for="type">Тип единицы</label>
+        <select id="type" name="type" form="putData">
             <option value="Rico Fw-100">Rico Fw-100</option>
             <option value="Rico Fw-150">Rico Fw-150</option>
             <option value="Rico Fw-300">Rico Fw-300</option>
@@ -98,9 +114,11 @@
             <option value="FAST PipeMic XL">FAST PipeMic XL</option>
         </select>
         <br/><br>
-        Серийный № <input type="text" form="putData" name="serial">
+        <label for="serial">Серийный №</label>
+        <input id="serial" type="text" form="putData" name="serial">
         <br/><br>
-        Неисправность <input type="text" form="putData" name="defect">
+        <label for="defect">Неисправность </label>
+        <input id="defect" type="text" form="putData" name="defect">
         <br/><br>
         <button type="submit">Создать</button>
     </form>
