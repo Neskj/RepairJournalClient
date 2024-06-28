@@ -53,24 +53,23 @@
         }
         .view-block button{
             align-self: center;
+            border-radius: 5px;
+            font-size: 16px;
+            padding: 5px;
+            margin: 10px;
         }
         .view-block h3{
+            text-align: center;
+        }
+        .view-block h2{
             text-align: left;
         }
         .view-block label{
             text-align: left;
         }
-
-
         body{
             text-align: center;
             font-family: "Verdana","sans-serif";
-        }
-        h1{
-
-        }
-        h3{
-
         }
     </style>
 </head>
@@ -97,8 +96,7 @@
     </form>
     <form class="view-block" id="putData" action="/journal/create" method="post">
         <h3>Создать новую запись</h3>
-        <br/><br>
-        <label for="type">Тип единицы</label>
+        <label for="type"><h4>Тип единицы</h4></label>
         <select id="type" name="type" form="putData">
             <option value="Rico Fw-100">Rico Fw-100</option>
             <option value="Rico Fw-150">Rico Fw-150</option>
@@ -113,16 +111,13 @@
             <option value="FAST PipeMic M">FAST PipeMic M</option>
             <option value="FAST PipeMic XL">FAST PipeMic XL</option>
         </select>
-        <br/><br>
-        <label for="serial">Серийный №</label>
+        <label for="serial"><h4>Серийный №</h4></label>
         <input id="serial" type="text" form="putData" name="serial">
-        <br/><br>
-        <label for="defect">Неисправность </label>
+        <label for="defect"><h4>Неисправность</h4></label>
         <input id="defect" type="text" form="putData" name="defect">
-        <br/><br>
+        </br><br>
         <button type="submit">Создать</button>
     </form>
 </div>
-
 </body>
 </html>
