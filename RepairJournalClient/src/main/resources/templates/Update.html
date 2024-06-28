@@ -43,15 +43,26 @@
             background-color: #62B1D0;
             border-radius: 10px;
         }
+        .view-block input{
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            padding: 10px;
+            width: 100%;
+        }
+        .view-block button{
+            align-self: center;
+            border-radius: 5px;
+            font-size: 16px;
+            padding: 5px;
+            margin: 10px;
+        }
+        .view-block h4{
+            text-align: left;
+        }
         body{
             text-align: center;
             font-family: "Verdana","sans-serif";
-        }
-        h1{
-
-        }
-        h3{
-
         }
     </style>
 </head>
@@ -78,10 +89,10 @@
     </form>
     <form class="view-block" id="updater" action="/journal/update" method="post">
         <h3>Обновить статус работы</h3>
-        <br/><br>
-        Серийный № <input type="text" form="updater" name="serial">
-        <br/><br>
-        Выполнено <input type="text" form="updater" name="complete">
+        <label for="serial"><h4>Серийный №</h4></label>
+        <input id="serial" type="text" form="updater" name="serial">
+        <label for="complete"><h4>Выполнено </h4></label>
+        <input id="complete" type="text" form="updater" name="complete">
         <br/><br>
         <button type="submit">Обновить</button>
     </form>
