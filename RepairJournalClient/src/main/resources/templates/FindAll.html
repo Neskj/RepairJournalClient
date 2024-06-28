@@ -45,20 +45,21 @@
         }
         .table{
             border: 1px solid black;
+            width: 100%;
+            margin: 0 auto;
+            background-color: #3AA6D0;
+            border-radius: 5px;
         }
-        .table tr, table td{
+        .table tr[id="hat"]{
+            background-color: #0069A9;
+        }
+        .table tr,td{
             border: 1px solid black;
+            border-radius: 5px;
         }
-
         body{
             text-align: center;
             font-family: "Verdana","sans-serif";
-        }
-        h1{
-
-        }
-        h3{
-
         }
     </style>
 </head>
@@ -86,7 +87,7 @@
     <form class="view-block">
         <h3>Ремонтируемые единицы</h3>
             <table class="table">
-                <tr>
+                <tr id="hat">
                     <td>Тип оборудования</td>
                     <td>Серийный номер</td>
                     <td>Дата поступления</td>

@@ -62,9 +62,17 @@
         }
         .table{
             border: 1px solid black;
+            width: 100%;
+            margin: 0 auto;
+            background-color: #3AA6D0;
+            border-radius: 5px;
         }
-        .table tr, table td{
+        .table tr[id="hat"]{
+            background-color: #0069A9;
+        }
+        .table tr,td{
             border: 1px solid black;
+            border-radius: 5px;
         }
         body{
             text-align: center;
@@ -101,7 +109,7 @@
         <button type="submit" form="sender">Найти</button>
         </br><br>
         <table class="table" th:unless="${#lists.isEmpty(dataList)}">
-            <tr>
+            <tr id="hat">
                 <td>Тип оборудования</td>
                 <td>Серийный номер</td>
                 <td>Дата поступления</td>
