@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body {
+            font-family: "Verdana", "sans-serif";
+            margin: 0;
+            padding: 0;
+        }
+
+        header, footer {
+            background-color: #0069A9;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1, h2 {
+            margin: 0;
+        }
+
+        .info-block {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px;
+        }
+
+        .left-menu {
+            background-color: #3AA6D0;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            flex-basis: 18%;
+            padding: 20px;
+        }
+
+        .left-menu h2 {
+            margin-bottom: 20px;
+        }
+
+        .left-menu ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .left-menu li {
+            margin-bottom: 10px;
+        }
+
+        .left-menu a {
+            background-color: #0069A9;
+            border-radius: 5px;
+            color: white;
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+            width: 100%;
+        }
+
+        .view-block {
+            background-color: #62B1D0;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            flex-basis: 80%;
+            padding: 20px;
+        }
+
+        .view-block h2 {
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .form-group input,
+        .form-group select {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            padding: 10px;
+            width: 100%;
+        }
+
+        .form-group button {
+            background-color: #0069A9;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+            padding: 10px 20px;
+        }
+    </style>
+    <meta charset="UTF-8" xmlns:th="http://www.thymeleaf.org">
+    <title>RepairJournalClient</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+    <img src="https://www.mosvodokanal.ru/local/templates/mvk_main_page/i/i-mvk-logo.png" alt="Logo">
+    <h1>Журнал ремонта цеха испытаний и техобслуживания</h1>
+</header>
+
+<main>
+    <div class="info-block">
+        <nav class="left-menu">
+            <h2>Меню</h2>
+            <ul>
+                <li><a href="/journal/create">Создать новую запись</a></li>
+                <li><a href="/journal/update">Обновить статус работы</a></li>
+                <li><a href="/journal/findall">Найти ремонтируемые единицы</a></li>
+                <li><a href="/journal/serial">Найти по серийному номеру</a></li>
+            </ul>
+        </nav>
+
+        <div class="view-block">
+            <h2>Создать новую запись</h2>
+            <form id="putData" action="/journal/create" method="post">
+                <div class="form-group">
+                    <label for="type">Тип единицы</label>
+                    <select id="type" name="type" form="putData">
+                        <option value="Rico Fw-100">Rico Fw-100</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="serial">Серийный №</label>
+                    <input type="text" id="serial" name="serial" required>
+                </div>
+                <div class="form-group">
+                    <label for="defect">Неисправность</label>
+                    <input type="text" id="defect" name="defect" required>
+                </div>
+                <button type="submit">Создать</button>
+            </form>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <p>&copy; 2024 Журнал ремонта. Все права защищены.</p>
+</footer>
+</body>
+</html>
