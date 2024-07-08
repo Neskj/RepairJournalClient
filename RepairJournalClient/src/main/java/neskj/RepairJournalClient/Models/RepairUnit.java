@@ -1,5 +1,7 @@
 package neskj.RepairJournalClient.Models;
 
+import java.util.Objects;
+
 public class RepairUnit {
 
     private String type;
@@ -8,6 +10,24 @@ public class RepairUnit {
     private String defect;
     private String complete;
     private String status;
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        RepairUnit unit = (RepairUnit) o;
+        return Objects.equals(type, unit.type) &&
+                Objects.equals(serial, unit.serial) &&
+                Objects.equals(date, unit.date) &&
+                Objects.equals(defect, unit.defect) &&
+                Objects.equals(complete, unit.complete) &&
+                Objects.equals(status, unit.status);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(type, serial, date, defect, complete, status);
+    }
 
     @Override
     public String toString() {
