@@ -3,8 +3,17 @@ package neskj.RepairJournalClient.Models;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 public class RepairUnitTest {
+
+    @Test
+    public void createNotNull() {
+
+        RepairUnit testUnit = new RepairUnit();
+
+        assertNotNull(testUnit);
+    }
 
     @Test
     public void builderAddTypeSuccessAndGetter() {
